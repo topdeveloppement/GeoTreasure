@@ -2,12 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Welcome in GeoTreasure{% endblock %}</title>
+        {% block stylesheets %}
+        <link type="text/css" rel="stylesheet" href="{{ asset('/GeoTreasureCss/bootstrap.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('/GeoTreasureCss/styles.css') }}">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascript %}
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRBSgtiopCCg-UWOSzjqE1VN6KjSxTgss&signed_in=true&libraries=places&callback=initMap" async defer></script>
+            <script type="text/javascript" src="{{ asset('/GeoTreasureJs/jquery.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('/GeoTreasureJs/bootstrap.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('/GeoTreasureJs/script.js') }}"></script>
+        {% endblock javascript %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="container-fluid">
+        {% block body %}
+        {% endblock %}
+        </div>   
     </body>
 </html>
