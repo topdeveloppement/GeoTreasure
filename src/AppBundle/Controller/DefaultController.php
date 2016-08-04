@@ -13,9 +13,23 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-        ]);
+        
+        return $this->render('homepage/index.html.twig');
+    }
+
+    /**
+     * @Route("/play", name="play")
+     */
+    public function mapAction(Request $request)
+    {
+        return $this->render('map/index.html.twig');
+    }
+
+    /**
+     * @Route("/marker", name="marker")
+     */
+    public function AddMarkerAction(Request $request)
+    {
+        return $this->render('map/index.html.twig');
     }
 }
