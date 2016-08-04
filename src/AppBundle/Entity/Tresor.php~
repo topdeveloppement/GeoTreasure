@@ -1,0 +1,68 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tresor
+ *
+ * @ORM\Table(name="tresor")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TresorRepository")
+ */
+class Tresor
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     */
+    private $name;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="lat", type="float")
+     */
+    private $lat;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="lng", type="float")
+     */
+    private $lng;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="picture", type="string", length=255)
+     */
+    private $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_start", type="text")
+     */
+    private $descriptionStart;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_end", type="text")
+     */
+    private $descriptionEnd;
+
+
+}
+
