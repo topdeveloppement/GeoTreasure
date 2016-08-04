@@ -31,16 +31,16 @@ class Tresor
     /**
      * @var float
      *
-     * @ORM\Column(name="lat", type="float")
+     * @ORM\Column(name="latitude", type="float")
      */
-    private $lat;
+    private $latitude;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lng", type="float")
+     * @ORM\Column(name="longitude", type="float")
      */
-    private $lng;
+    private $longitude;
 
     /**
      * @var string
@@ -62,7 +62,4 @@ class Tresor
      * @ORM\Column(name="description_end", type="text")
      */
     private $descriptionEnd;
-
-
 }
-

@@ -13,11 +13,13 @@
             <script type="text/javascript" src="{{ asset('/GeoTreasureJs/jquery.js') }}"></script>
             <script type="text/javascript" src="{{ asset('/GeoTreasureJs/bootstrap.js') }}"></script>
             <script type="text/javascript" src="{{ asset('/GeoTreasureJs/script.js') }}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
         {% endblock javascript %}
     </head>
     <body>
         <div class="container-fluid">
-            <div class="carousel slide carousel-fade" data-ride="carousel">
+            {# <div class="carousel slide carousel-fade" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
@@ -26,7 +28,7 @@
                     </div>
                     <div class="item">
                     </div>
-                </div>
+                </div> #}
         {% block body %}
         {% endblock %}
         </div>   

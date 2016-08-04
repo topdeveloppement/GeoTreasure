@@ -20,7 +20,7 @@ function initMap() {
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
-    zoom: 6,
+    zoom: 7,
     zoomControl: true,
     mapTypeControl: true,
     mapTypeControlOptions: {
@@ -33,27 +33,32 @@ function initMap() {
     }
   });
   google.maps.event.addListener(map, 'click', function(event) {
-    var latlng = event.latLng;
-    var lat = latlng.lat();
-    var lng = latlng.lng();
-    console.log(lat);
-    console.log(lng);
-  });
+      var latlng = event.latLng;
+      var lat = latlng.lat();
+      var lng = latlng.lng();
+      //showIndice();
+      marker = new google.maps.Marker({
+         map: map,
+         position: { lat: lat , lng: lng },
+         title: 'Hello World!'
+      });
+    });
 }
-// Fonction qui execute une requete une ajax pour afficher un marker.
-function showEtablissementMarker(lat, lng){
 
-  assetMarker = document.getElementById('assetMarker').getAttribute('src');
+jQuery(document).ready(function() {
+ 
+  $('#play').click(function(event) {
+    showDescriptionStart();
+  });
 
-  $.ajax({
-      url: Routing.generate('marker'),
+  function showDescriptionStart () {
+     $.ajax({
+      url: Routing.generate('showDesc'),
       type: 'POST',
       dataType: "json",
-      data: {'lat': latitudeSearch, 'lng': longitudeSearch },
       success: function (results){
-
-        affichageMap(results);
 
       }
     });
-}
+  }
+})

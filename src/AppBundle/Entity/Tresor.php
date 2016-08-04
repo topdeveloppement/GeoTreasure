@@ -31,16 +31,16 @@ class Tresor
     /**
      * @var float
      *
-     * @ORM\Column(name="lat", type="float")
+     * @ORM\Column(name="latitude", type="float")
      */
-    private $lat;
+    private $latitude;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="lng", type="float")
+     * @ORM\Column(name="longitude", type="float")
      */
-    private $lng;
+    private $longitude;
 
     /**
      * @var string
@@ -62,8 +62,6 @@ class Tresor
      * @ORM\Column(name="description_end", type="text")
      */
     private $descriptionEnd;
-
-
 
     /**
      * Get id
@@ -100,51 +98,51 @@ class Tresor
     }
 
     /**
-     * Set lat
+     * Set latitude
      *
-     * @param float $lat
+     * @param float $latitude
      *
      * @return Tresor
      */
-    public function setLat($lat)
+    public function setLatitude($latitude)
     {
-        $this->lat = $lat;
+        $this->latitude = $latitude;
 
         return $this;
     }
 
     /**
-     * Get lat
+     * Get latitude
      *
      * @return float
      */
-    public function getLat()
+    public function getLatitude()
     {
-        return $this->lat;
+        return $this->latitude;
     }
 
     /**
-     * Set lng
+     * Set longitude
      *
-     * @param float $lng
+     * @param float $longitude
      *
      * @return Tresor
      */
-    public function setLng($lng)
+    public function setLongitude($longitude)
     {
-        $this->lng = $lng;
+        $this->longitude = $longitude;
 
         return $this;
     }
 
     /**
-     * Get lng
+     * Get longitude
      *
      * @return float
      */
-    public function getLng()
+    public function getLongitude()
     {
-        return $this->lng;
+        return $this->longitude;
     }
 
     /**
